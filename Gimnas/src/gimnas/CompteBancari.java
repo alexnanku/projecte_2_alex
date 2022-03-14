@@ -9,6 +9,9 @@ public class CompteBancari {
     public static final int IBANNUMBER_MAX_SIZE = 34;
     public static final BigInteger IBANNUMBER_MAGIC_NUMBER = new BigInteger("97");
 
+    public CompteBancari(){
+    }
+
     @Override
     public String toString() {
         return "CompteBancari: " + ccc;

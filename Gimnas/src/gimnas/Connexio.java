@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class Connexio {
     
-    private final String server = "jdbc:mysql://192.168.1.200/";
+    private final String server = "jdbc:mysql://192.168.16.211/";
     private final String password = "Dam1";
     private final String user = "projecte";
     private final String bd = "gim";

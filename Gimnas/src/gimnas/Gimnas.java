@@ -1,5 +1,5 @@
 package gimnas;
-import com.sun.jdi.connect.spi.Connection;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class Gimnas {
     Scanner keyboard = new Scanner(System.in);
     
     private Client client = new Client();
-    private Activitat activitat = new Activitat(); 
+    private Activitat activitat = new Activitat();
 
     ArrayList<Client> clients;
     ArrayList<Activitat> activitats;
@@ -31,7 +31,7 @@ public class Gimnas {
             System.out.println("GESTOR D'INVENTARI");
             System.out.println("1. Gestió client");
             System.out.println("2. Visaualitzar clients per criteri");
-            System.out.println("3. Visualitzar activitats del dia");
+            System.out.println("3. Visualitzar el client amb les reserves fetes avui.");
             System.out.println("4. Sortir");
             System.out.println("\nTria una opcio");
 
@@ -46,7 +46,8 @@ public class Gimnas {
                         System.out.println("1. Consulta Client");
                         System.out.println("2. Alta client");
                         System.out.println("3. Mostrar el DNI de tots els clients");
-                        System.out.println("4. Enrere");
+                        System.out.println("4. Baixa del client");
+                        System.out.println("5. Enrere");
                         System.out.println("\nTria una opcio");
 
                         int opcio2 = keyboard.nextInt();
@@ -62,10 +63,14 @@ public class Gimnas {
                                 client.mostrarClients();
                                 break;
                             case 4:
+                                client.baixaClient();
+                                break;
+                            case 5:
                                 exit2 = true;
                                 break;
                             default:
                                 System.out.println("La opció sel·leccionada no és vàl·lida");
+                            break;
                         }
                     } while (!exit2);
                     break;
@@ -98,17 +103,20 @@ public class Gimnas {
                                 break;
                             default:
                                 System.out.println("La opció sel·leccionada no és vàl·lida");
+                                break;
                         }
                     } while (!exit2);
                     break;
                 case 3:
-                    activitat.visualitzarActivitats();
+                    this.activitats = activitat.getActivitatsPerReserves();
+                    visualitzarActivitats();
                     break;
                 case 4:
                     exit = true;
                     break;
                 default:
                     System.out.println("La opció sel·leccionada no és vàl·lida");
+                    break;
             }
 
             System.out.println("\nOpció: " + opcio);
@@ -125,6 +133,12 @@ public class Gimnas {
     private void visualitzarClients() {
         for(Client cli: this.clients){
             System.out.println(cli);
+        }
+    }
+    
+    private void visualitzarActivitats() {
+        for(Activitat act: this.activitats){
+            System.out.println(act);
         }
     }
 }

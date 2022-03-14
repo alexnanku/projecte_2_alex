@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Activitat">
+  <ClassDiagramComponents>
+    <Class name="Activitat" package="gimnas" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nom_act" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNom_act" returnType="String" visibility="public"/>
+        <Method name="setNom_act" returnType="void" visibility="public">
+          <Argument type="String" name="nom_act"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="visualitzarActivitats" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
