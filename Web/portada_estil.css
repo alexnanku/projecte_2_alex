@@ -1,0 +1,463 @@
+/* ALL */
+
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+}
+
+body{
+    height:100%;
+    font-size: 120%;
+}
+
+/* HEADER */
+
+header{
+    background: #FFDAB9;
+    width:100%;
+    height:100%;
+}
+
+header img{
+    width:60%;
+    margin: 15% 20%;
+    background: none;
+}
+
+/* NAVIGATION */
+
+nav{
+    height: 12%;
+    width: 95%;
+    margin: 0.5% 5%;
+    padding: 0.4% 0%;
+    display: flex;
+    align-items: center;
+}
+
+nav *{
+    background: none;
+}
+
+nav img{
+    width: 4em;
+    margin:2%;
+}
+
+nav a{
+    color: #8B8989;
+    transition: 0.3s ease;
+    font-weight: 300;
+}
+
+nav a:hover{
+    color: black;
+}
+
+.nav_logo{
+    display: flex;
+    width: 5%;
+}
+
+.opcio{
+    display: flex;
+    justify-items: center;
+    margin-left:8%;
+    flex-grow: 10;  /*espain que ocupi comparant amb altres elements de flexbox*/
+}
+
+.opcio a{
+    margin: 0% 2%;
+    text-decoration: none;
+    float: left;
+    display:block;
+    text-align: center;
+}
+
+.icon{
+    display:none;
+    font-size:140%;
+}
+
+.Usuari{
+    display: flex;
+    justify-items: center;
+    flex-grow: 0;
+    margin-right:15%;
+    cursor:pointer;
+}
+
+.opcio_usuari{  /*  Element invisible, es visualitza sol quant fas clic a nom usuari, funcionar amb js*/
+    display: none;
+    position:absolute;
+    transform: translate(-150px, 32px); /*  Porta l'element a -150px cap a esquerra i 32px cap a baix*/
+    animation:user-menu 0.5s ease forwards; /*  Creen una animacio anomenada user-manu amb durada de 0.5s tipus animacio ease i estat despres d'acabar l'animació forwards(permanent)*/
+}
+
+@keyframes user-menu{
+    0%{
+        opacity: 0; /*al 0% de animacio no s'ensenya*/
+    }
+    100%{
+        opacity: 1; /*  al 100% si s'ensenya progresivament, tambe es moura d'esquerra a dreta */
+        transform: translate(-70px, 32px);
+    }
+}
+
+.llista_opcio{
+    position: absolute;
+    background: white;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 25px;
+    width:250px;
+    border-radius: 15px;
+}
+
+.llista_opcio a{
+    margin:4% 0%;
+    text-decoration: none;
+}
+
+.llista_opcio a:hover{
+    background: #e2e2e2;
+    padding: 0 15px;
+    width:205px;
+    border-radius:4px;
+}
+
+.mostrar_opcio{ /*  aquest ensenya el element ivisible d'abans, s'utilitzar en js*/
+    display: block;
+}
+
+h2{
+    text-align: right;
+    font-size: 120%;
+}
+
+.sticky {   /*  opcions que ens aplicara, gracies al js, quant fem scroll a la pagina, el nav que era relative es posara fixe   */
+    position: fixed;
+    background: white;
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 1%;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    box-shadow:
+    0px 2.5px 10px rgba(0, 0, 0, 0.03),
+    0px 20px 80px rgba(0, 0, 0, 0.36);
+}
+
+.sticky img{
+    border-radius: 50px;
+    box-shadow: 
+      0px 2.5px 10px rgba(0, 0, 0, 0.013),
+      0px 20px 80px rgba(0, 0, 0, 0.16);
+}
+
+.sticky *{
+    background: white;
+}
+
+.sticky .icon{
+    position: absolute;
+    top:30%;
+}
+
+/* MAIN */
+
+main{
+    width: 100%;
+}
+
+section{
+    width: 90%;
+    margin: 4% 5%;
+    border-radius: 50px;
+    box-shadow:
+      10.4px 10.4px 4.5px rgba(0, 0, 0, 0.054),
+      13.4px 13.4px 12.4px rgba(0, 0, 0, 0.121),
+      15.7px 15.7px 29.8px rgba(0, 0, 0, 0.186),
+      20px 20px 99px rgba(0, 0, 0, 0.23);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+}
+
+section, section *{
+    background: white;
+}
+
+section article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article img{
+    width: 75%;
+}
+
+/* FOOTER */
+
+footer{
+    background: #303030;
+    padding: 1% 20%;
+}
+
+footer *{
+    background: #303030;
+    color: #D3D3D3;
+}
+
+footer a{
+    text-decoration: none;
+    color: #D3D3D3;
+}
+
+.xarxes{
+    margin: 5% auto 4% auto;
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.xarxes a{
+    position: relative;
+    width:100%;
+    margin:0% 10%;
+    font-size: 150%;
+    text-align: center;
+    border-radius: 50%;
+    padding: 2.5%;
+    transition: 0.3s ease;
+}
+
+.fa-facebook{
+    border: 5px solid;
+}
+
+.fa-facebook:hover{
+    color: #3b5998;
+    border: 5px solid #3b5998; 
+    text-shadow: 0px 0px 15px #3b5998;
+    box-shadow: 0px 0px 15px #3b5998;
+}
+
+.fa-instagram{
+    border: 5px solid;
+}
+
+.fa-instagram:hover{
+    color: #bc2a8d;
+    border: 5px solid #bc2a8d; 
+    text-shadow: 0px 0px 15px #bc2a8d;
+    box-shadow: 0px 0px 15px #bc2a8d;
+}
+
+.fa-google{
+    border: 5px solid;
+}
+
+.fa-google:hover{
+    color: #dd4b39;
+    border: 5px solid #dd4b39; 
+    text-shadow: 0px 0px 15px #dd4b39;
+    box-shadow: 0px 0px 15px #dd4b39;
+}
+
+.fa-twitter{
+    border: 5px solid;
+}
+
+.fa-twitter:hover{
+    color: #00aced;
+    border: 5px solid #00aced; 
+    text-shadow: 0px 0px 15px #00aced;
+    box-shadow: 0px 0px 15px #00aced;
+}
+
+.links{
+    padding: 2%;
+    margin: 3% 0%;
+    font-size: 90%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.links a{
+    transition: 0.2s ease;
+}
+
+.links a:hover{
+    transform: translate(5px);
+    color: #656565;
+}
+
+.under_footer{
+    display: flex;
+    justify-content: center;
+    font-size: 80%;
+}
+
+
+
+
+/********************/
+
+/*  MEDIA QUERIS    */
+
+/********************/
+
+
+/*      MOBIL      */
+
+@media screen and (max-width: 600px){
+    
+    /*      HEADER      */
+    
+    header{
+        display:none;   /*s'amagara el header en amplada 600px*/
+    }
+    
+    /*      NAVIGATION      */
+    
+    nav{
+        height: 100px;
+        font-size: 80%;
+        top:0;
+    }
+    
+    .sticky{
+        height: 100px;
+    }
+        
+    .nav_logo{
+        margin: 1%;
+        width: 15%
+    }
+    
+    .nav_logo img{
+        width:100%;
+    }
+    
+    .Usuari{
+        position: absolute;
+        right: 0;
+    }
+    
+    .llista_opcio a{
+        font-size: 120%;
+    }
+    
+    .opcio a{   /*  s'amaguen les opcions de reserves i competicions*/
+        display: none;
+    }
+    
+    .opcio a:hover{
+        background:  #e2e2e2;
+        width:105%;
+        padding: 0% 10%;
+        border-radius:4px;
+    }
+    
+    a.icon {    /*  s'ensenya la icona de js per ensenya opcions*/
+        float: right;
+        display: block;
+    }
+    
+    .opcio.responsive { /*  parametres d'opcions que s'apliquen sol quant es fara clic a la icona*/
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: white;
+        border-radius: 15px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        width:35%;
+        padding: 3%;
+        top:8%;
+        left:25%;
+        transform: translate(20px);
+        animation: button 0.5s ease forwards; /*    ens apareixara, del costat, suau i progresiu  */
+    }
+    
+    @keyframes button{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            transform: translate(-50px);
+        }
+    }
+    
+    .sticky .opcio{
+        top:50%;
+    }
+    
+    .opcio.responsive a{
+        display:block;
+        text-align: left;
+        margin:5% 0%;
+        font-size: 120%;
+    }
+    
+    .sticky .opcio.responsive{
+        top:65%;
+    }
+    
+    .icon {
+        position: absolute;
+        top:4%;
+        left:24%;
+    }
+    
+    /*      MAIN       */
+    
+    section{    /*  Perque els imatges es fiqui en columna i poden ser visibles perfectament*/
+        display: flex;
+        flex-direction: column;
+        width:80%;
+        padding: 0;
+        margin: 5% auto;
+    }
+    
+    section.reverse{    /*  com que alguns estan posats 'text-imatge' i altres 'imatge-text' al fer-ho petit vull que tot es vegi igual, en columna */
+        flex-direction: column-reverse;
+    }
+    
+    article, article div{
+        background: none;
+    }
+    
+    article div{
+        margin:5%;
+    }
+    
+    article img{
+        width:100%;
+        border-radius: 50px 50px 0px 0px;
+    }
+    
+    /*      FOOTER      */
+    
+    .xarxes a{
+        width:2em;
+    }
+    
+    .links{ /*  faig un wrap, aixi quant el text no hi capigui, es moura cap baix*/
+        flex-wrap: wrap;
+    }
+    
+    .links a{
+        margin: 1% 5%;
+    }
+}
